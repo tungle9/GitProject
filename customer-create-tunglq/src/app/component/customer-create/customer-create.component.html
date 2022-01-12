@@ -1,3 +1,73 @@
-<p>
-  customer-create works!
-</p>
+<style>
+  img {
+    border: 3px solid #FE9900;
+    border-radius: 2px;
+    margin-left: 200px;
+    width: 150px;
+  }
+</style>
+<div class="modal fade" data-keyboard="false" data-backdrop="static" id="exampleModal" tabindex="-1"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="border-radius: 20px">
+      <!--            <div class="modal-header">-->
+      <!--                <h5 class="modal-title" id="exampleModalLabel1"></h5>-->
+      <!--                &lt;!&ndash;        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>&ndash;&gt;-->
+      <!--            </div>-->
+      <div class="modal-body">
+        <!--        form-->
+        <form class="needs-validation" novalidate [formGroup]="createCustomer" (ngSubmit)="submit()">
+          <div class="container">
+            <!--                        <h4>Đăng ký tài khoản</h4>-->
+            <div><h4 style="padding-top: 0px">Đăng ký</h4>
+              <span style="color: #ffaa30">Vui lòng nhập biểu mẫu bên dưới để đăng kí </span>
+            </div>
+            <hr>
+            <p class="fs-5">Thông tin cá nhân</p>
+            <div class="input-form">
+              <input type="text" placeholder="Họ và tên" class="form-control" required formControlName="name">
+              <input type="email" class="form-control fs-6" placeholder="Email" required
+                     style="font-size: 15px;" formControlName="email">
+              <input type="text" class="form-control" placeholder="Địa chỉ" required formControlName="address">
+              <input type="text" class="form-control" placeholder="căn cước công dân" required formControlName="idCard">
+              <div class="input-group">
+                <input type="date" placeholder="Ngày sinh" class="form-control" required formControlName="dateOfBirth">
+                <input type="number" placeholder="Số điện thoại" class="form-control"
+                       style="margin-left: 10px"
+                       required formControlName="phoneNumber">
+              </div>
+              <div>
+                <input type="radio" value="genderCustomer" name="gender" checked="checked" formControlName="gender">
+                <label>Nam</label>
+                <input type="radio" value="genderCustomer" name="gender" style="margin-left: 50px" formControlName="gender">
+                <label>Nữ</label>
+              </div>
+              <br>
+              <p class="fs-5">Thông tin tài khoản</p>
+              <hr>
+              <input type="text" placeholder="Tên đăng nhập" required class="form-control" formControlName="userName">
+              <input type="password" placeholder="Mật Khẩu" required class="form-control" formControlName="password">
+              <input type="password" placeholder="Nhập Lại Mật Khẩu" name="confirmPassword"
+                     class="form-control" formControlName="confirmPassword">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <span style="padding: 0px 50px 0px  50px">Bằng việc đăng ký bạn đã đồng ý với <a href="">điều khoản</a> của trung tâm BDS </span>
+            <button type="submit" class="signupbtn">Đăng ký</button>
+          </div>
+        </form>
+      </div>
+      <hr>
+      <div style="padding: 0px 110px 10px 110px">
+        Bạn đã có tài khoản? <a href="">đăng nhập </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div style="padding-left: 500px">
+  <button type="button" class="btn" data-bs-toggle="modal"
+          data-bs-target="#exampleModal">Đăng kí
+  </button>
+</div>
