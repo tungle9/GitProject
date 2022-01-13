@@ -5,6 +5,7 @@ import {Customer} from '../model/customer';
 import {Observable} from 'rxjs';
 
 
+// @ts-ignore
 @Injectable(
 )
 export class CustomerService {
@@ -14,6 +15,7 @@ export class CustomerService {
   }
 
   getCustomerById(id): Observable<any> {
+    console.log('fdklgjdklfg');
     return this.httpClient.get(this.API_URL + '/' + id);
   }
 

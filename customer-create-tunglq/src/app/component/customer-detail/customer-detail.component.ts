@@ -20,7 +20,7 @@ export class CustomerDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
-      this.id = +paramMap.get('KH-0001');
+      this.id = +paramMap.get('id');
       console.log(this.id);
     });
     this.subscription = this.customerService.getCustomerById(this.id).subscribe(
